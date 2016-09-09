@@ -27,7 +27,7 @@ $app->run();
 // start rollbar 
 
 // installs global error and exception handlers
-Rollbar::init(array('access_token' => '0e6833a84b494912a489db1cdd33ed0b'));
+Rollbar::init(array('access_token' => '0f1fce19bb7b459a8bf1635e6f3b079b'));
 
 // Message at level 'info'
 Rollbar::report_message('testing 123', 'info');
