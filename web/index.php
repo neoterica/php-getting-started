@@ -23,3 +23,23 @@ $app->get('/', function() use($app) {
 });
 
 $app->run();
+
+// start rollbar 
+
+// installs global error and exception handlers
+Rollbar::init(array('access_token' => '0e6833a84b494912a489db1cdd33ed0b'));
+
+// Message at level 'info'
+Rollbar::report_message('testing 123', 'info');
+
+// Catch an exception and send it to Rollbar
+try {
+    throw new Exception('test exception');
+} catch (Exception $e) {
+    Rollbar::report_exception($e);
+}
+
+// Will also be reported by the exception handler
+throw new Exception('test 2');
+
+// end rollbar 
