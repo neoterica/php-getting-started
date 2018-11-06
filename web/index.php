@@ -32,6 +32,9 @@ Rollbar::init(array('access_token' => '0f1fce19bb7b459a8bf1635e6f3b079b'));
 // Message at level 'info'
 Rollbar::report_message('testing 123', 'info');
 
+// Message at level 'warning'
+Rollbar::report_message('this is an important message', 'warning');
+
 // Catch an exception and send it to Rollbar
 try {
     throw new Exception('test exception');
